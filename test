@@ -1,0 +1,25 @@
+hexAlphabet = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]
+
+def baseToDecimal(num, base):
+        num = reversed(list(num))
+        decimal = []
+        j = 0
+        
+        if base == 16:
+            for nu in num:
+                i = hexAlphabet.index(nu)
+                nu = i * (base**j)
+                decimal.append(nu)
+                j+=1
+        else:
+            for nu in num:
+                nu = int(nu) * (base**j)
+                decimal.append(nu)
+                j+=1
+            
+        
+        return sum(decimal)
+
+
+
+print(baseToDecimal("1101101", 2))
